@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 	<title>Emotify</title>
 	<style type="text/css">
 		* {
@@ -14,6 +14,7 @@
 
 		html {
 			scroll-behavior: smooth;
+			scroll-padding-top: 70px; /* height of sticky header */
 		}
 
 		::-moz-selection { /* Code for Firefox */
@@ -44,6 +45,15 @@
 			cursor: pointer;
 		}
 
+		code {
+			font-family: 'Source Code Pro', monospace;
+			font-size: 0.8em;
+			background-color: #F1F3F4;
+			padding: 15px;
+			border-radius: 10px;
+			line-height: 60px;
+		}
+
 		.no-select {
 			-webkit-touch-callout: none; /* iOS Safari */
 			-webkit-user-select: none; /* Safari */
@@ -67,12 +77,14 @@
 		}
 
 		.get-started {
-			padding: 12%;
-			padding-left: 25%;
+			margin: 12%;
+			margin-left: 15%;
+			margin-right: 15%;
 		}
 
 		.get-started p {
 			font-size: 20px;
+			line-height: 45px;
 		}
 	</style>
 </head>
@@ -100,8 +112,37 @@
 	<div class="get-started" id="getStarted">
 		<p>
 			<b>Getting started with Emotify is a piece of cake!</b>
+			<br>
+			<b>1.</b> Include the Emotify script.
+			<br>
+			<code>
+				&lt;script src="https://cdn.jsdelivr.net/gh/aryanbaburajan/emotify/src/emotify.js"&gt;&lt;/script&gt;
+			</code>
+			<br>
+			<b>2.</b> Create custom emotes.
+			<br>
+			<code>
+				emAddEmote({
+					"grin": "./grin.svg"
+				})
+			</code>
+			<br>			
+			<b>3.</b> Create an element with the <code>em</code> class, and Emotify will automatically convert the text into emojies for you.
+			<br>
+			<code>
+				&lt;p class="em"&gt;Hello, World! :grin:&lt;/p&gt;
+			</code>
+			<br>
+			<code class="em">
+				Hello, World! :grin:
+			</code>
 		</p>
 	</div>
+	<script src="./src/emotify.js"></script>
+	<script type="text/javascript">
+		emAddEmote({
+			"grin": "./img/grin.svg"
+		});
+	</script>
 </body>
-<script src="./src/emotify.js"></script>
 </html>
