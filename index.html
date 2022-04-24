@@ -27,6 +27,18 @@
 			background: #000000;
 		}
 
+		::-webkit-scrollbar {
+			width: 10px;
+		}
+
+		::-webkit-scrollbar-track {
+			background-color: #F1F3F4;
+		}
+ 
+		::-webkit-scrollbar-thumb {
+			background-color: #000000; 
+		}
+
 		button {
 			border-color: #000000;
 			border-width: 1px;
@@ -52,6 +64,10 @@
 			padding: 15px;
 			border-radius: 10px;
 			line-height: 60px;
+		}
+
+		a {
+			color: #000000;
 		}
 
 		.no-select {
@@ -90,11 +106,11 @@
 </head>
 <body>
 	<div class="hero">
-		<h1 class="hero-title">
-			Emotify
+		<h1 class="hero-title em">
+			Emotify.js :laugh:
 		</h1>
-		<h2 class="hero-description">
-			A JavaScript library that lets you add custom emotes into your website.
+		<h2 class="hero-description em">
+			A JavaScript library that lets you add custom emotes into your website. :love:
 		</h2>
 		<div class="hero-buttons no-select">
 			<a href="#getStarted">
@@ -113,35 +129,59 @@
 		<p>
 			<b>Getting started with Emotify is a piece of cake!</b>
 			<br>
+
 			<b>1.</b> Include the Emotify script.
 			<br>
 			<code>
 				&lt;script src="https://cdn.jsdelivr.net/gh/aryanbaburajan/emotify/src/emotify.js"&gt;&lt;/script&gt;
 			</code>
 			<br>
+
 			<b>2.</b> Create custom emotes.
 			<br>
 			<code>
 				emAddEmote({
-					"grin": "./grin.svg"
-				})
+					"blobhype": "https://cdn.discordapp.com/emojis/833742785198424084.gif"
+				});
 			</code>
-			<br>			
-			<b>3.</b> Create an element with the <code>em</code> class, and Emotify will automatically convert the text into emojies for you.
+			<br>
+
+			<b>3.</b> Create an element with the <code>em</code> class, and Emotify will automatically convert the text into emotes for you when the document loads.
 			<br>
 			<code>
-				&lt;p class="em"&gt;Hello, World! :grin:&lt;/p&gt;
+				&lt;p class="em"&gt;Hello, World! :blobhype:&lt;/p&gt;
 			</code>
 			<br>
 			<code class="em">
-				Hello, World! :grin:
+				Hello, World! :blobhype:
 			</code>
+			<br>
+
+			<b>4.</b> Changed the text? You may reconvert it using the <code>emConvert();</code> function.
+			<br>
+			<code>
+				emConvert();
+			</code>
+			<br>
+
+			<b>5.</b> Emotify comes with 20+ built-in default emotes as well!
+			<br>
+			<code>
+				&lt;p class="em"&gt;Hi :grin:&lt;/p&gt;
+			</code>
+			<br>
+			<code class="em">
+				Hi :grin:
+			</code>
+			<br>
+
+			<b>6.</b> Feel free to look at the <a href="./docs.html">documentation</a> for a list of default emotes and functions available.
 		</p>
 	</div>
 	<script src="./src/emotify.js"></script>
 	<script type="text/javascript">
 		emAddEmote({
-			"grin": "./img/grin.svg"
+			"blobhype": "https://cdn.discordapp.com/emojis/833742785198424084.gif"
 		});
 	</script>
 </body>

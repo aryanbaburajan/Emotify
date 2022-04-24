@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<title>Emotify</title>
+	<style type="text/css">
+		* {
+			font-family: 'Roboto', sans-serif;
+		}
+
+		html {
+			scroll-behavior: smooth;
+			scroll-padding-top: 70px; /* height of sticky header */
+		}
+
+		::-moz-selection { /* Code for Firefox */
+			color: #FFFFFF;
+			background: #000000;
+		}
+
+		::selection {
+			color: #FFFFFF;
+			background: #000000;
+		}
+
+		::-webkit-scrollbar {
+			width: 10px;
+		}
+
+		::-webkit-scrollbar-track {
+			background-color: #F1F3F4;
+		}
+ 
+		::-webkit-scrollbar-thumb {
+			background-color: #000000; 
+		}
+
+		code, pre {
+			font-family: 'Source Code Pro', monospace;
+			font-size: 0.8em;
+			background-color: #F1F3F4;
+			padding: 15px;
+			border-radius: 10px;
+			line-height: 60px;
+		}
+
+		pre {
+			line-height: 30px;
+		}
+
+		a {
+			color: #000000;
+		}
+
+		.content {
+			margin: 12%;
+			margin-left: 15%;
+			margin-right: 15%;
+		}
+
+		.content p {
+			font-size: 20px;
+			line-height: 45px;
+		}
+
+		td {
+			padding: 5px;
+		}
+	</style>
+</head>
+<body>
+	<div class="content">
+		<h1>emAddEmote()</h1>
+		<p><code>emAddEmote()</code> adds to the list of emotes, an emote that will be considered while emotify-ing text.
+
+		<h2>Syntax</h2>
+		<code>
+			emAddEmote({"emoteName", "emoteURL"});
+		</code>
+
+		<h2>Parameters</h2>
+		<code>emotes</code> An object containing the emote names and URLs as key and value pairs.
+
+		<h2>Example</h2>
+<pre>emAddEmote({
+	"sigh": "./sigh.png",
+	"sweat": "./sweat.png",
+	"neutral": "./neutral.png",
+	"love": "./love.png",
+	"sleepy": "./sleepy.png",
+});</pre>
+		<br>
+
+		<h1>emConvert()</h1>
+		<p><code>emConvert()</code> Reconverts all texts into emotes, useful in scenarios where the text changes after page load.
+
+		<h2>Syntax</h2>
+		<code>
+			emConvert();
+		</code>
+
+		<h2>Parameters</h2>
+		No parameters.
+
+		<h2>Example</h2>
+<pre>emConvert();</pre>
+		<br>
+
+		<h1>Default Emote List</h1>
+		<table class="em">
+			<tr>
+				<td><b>Name</b></td>
+				<td><b>Emote</b></td>
+			</tr>
+			<tr>
+				<td>sigh</td>
+				<td>:sigh:</td>
+			</tr>
+			<tr>
+				<td>sweat</td>
+				<td>:sweat:</td>
+			</tr>
+			<tr>
+				<td>neutral</td>
+				<td>:neutral:</td>
+			</tr>
+			<tr>
+				<td>love</td>
+				<td>:love:</td>
+			</tr>
+			<tr>
+				<td>sleepy</td>
+				<td>:sleepy:</td>
+			</tr>
+			<tr>
+				<td>laugh</td>
+				<td>:laugh:</td>
+			</tr>
+			<tr>
+				<td>smile</td>
+				<td>:smile:</td>
+			</tr>
+			<tr>
+				<td>sob</td>
+				<td>:sob:</td>
+			</tr>
+			<tr>
+				<td>confused</td>
+				<td>:confused:</td>
+			</tr>
+			<tr>
+				<td>sad</td>
+				<td>:sad:</td>
+			</tr>
+			<tr>
+				<td>sneeze</td>
+				<td>:sneeze:</td>
+			</tr>
+			<tr>
+				<td>angry</td>
+				<td>:angry:</td>
+			</tr>
+			<tr>
+				<td>yawn</td>
+				<td>:yawn:</td>
+			</tr>
+			<tr>
+				<td>kiss</td>
+				<td>:kiss:</td>
+			</tr>
+			<tr>
+				<td>sweat_smile</td>
+				<td>:sweat_smile:</td>
+			</tr>
+			<tr>
+				<td>amazed</td>
+				<td>:amazed:</td>
+			</tr>
+			<tr>
+				<td>wink</td>
+				<td>:wink:</td>
+			</tr>
+			<tr>
+				<td>smirk</td>
+				<td>:smirk:</td>
+			</tr>
+			<tr>
+				<td>unamused</td>
+				<td>:unamused:</td>
+			</tr>
+			<tr>
+				<td>joy</td>
+				<td>:joy:</td>
+			</tr>
+			<tr>
+				<td>grin</td>
+				<td>:grin:</td>
+			</tr>
+		</table>
+		<br>
+
+		<a href="./index.html">Go back to emotify.js.org</a>
+	</div>
+	<script src="./src/emotify.js"></script>
+</body>
+</html>
