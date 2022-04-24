@@ -25,53 +25,76 @@ SOFTWARE.
 let emoteList = {};
 
 function emAddDefault() {
-	emAddEmote({
-		"sigh": "https://cdn-icons-png.flaticon.com/512/742/742752.png",
-		"sweat": "https://cdn-icons-png.flaticon.com/512/742/742860.png",
-		"neutral": "https://cdn-icons-png.flaticon.com/512/742/742774.png",
-		"love": "https://cdn-icons-png.flaticon.com/512/742/742750.png",
-		"sleepy": "https://cdn-icons-png.flaticon.com/512/742/742927.png",
-		"laugh": "https://cdn-icons-png.flaticon.com/512/742/742920.png",
-		"smile": "https://cdn-icons-png.flaticon.com/512/742/742940.png",
-		"sob": "https://cdn-icons-png.flaticon.com/512/742/742784.png",
-		"confused": "https://cdn-icons-png.flaticon.com/512/742/742753.png",
-		"sad": "https://cdn-icons-png.flaticon.com/512/742/742758.png",
-		"sneeze": "https://cdn-icons-png.flaticon.com/512/742/742787.png",
-		"angry": "https://cdn-icons-png.flaticon.com/512/742/742744.png",
-		"yawn": "https://cdn-icons-png.flaticon.com/512/742/742911.png",
-		"kiss": "https://cdn-icons-png.flaticon.com/512/742/742745.png",
-		"sweat_smile": "https://cdn-icons-png.flaticon.com/512/742/742919.png",
-		"amazed": "https://cdn-icons-png.flaticon.com/512/742/742939.png",
-		"wink": "https://cdn-icons-png.flaticon.com/512/742/742922.png",
-		"smirk": "https://cdn-icons-png.flaticon.com/512/742/742778.png",
-		"unamused": "https://cdn-icons-png.flaticon.com/512/742/742934.png",
-		"joy": "https://cdn-icons-png.flaticon.com/512/742/742921.png",
-		"grin": "https://cdn-icons-png.flaticon.com/512/742/742751.png"
-	});
+  emAddEmote({
+    sigh: "https://cdn-icons-png.flaticon.com/512/742/742752.png",
+    sweat: "https://cdn-icons-png.flaticon.com/512/742/742860.png",
+    neutral: "https://cdn-icons-png.flaticon.com/512/742/742774.png",
+    love: "https://cdn-icons-png.flaticon.com/512/742/742750.png",
+    sleepy: "https://cdn-icons-png.flaticon.com/512/742/742927.png",
+    laugh: "https://cdn-icons-png.flaticon.com/512/742/742920.png",
+    smile: "https://cdn-icons-png.flaticon.com/512/742/742940.png",
+    sob: "https://cdn-icons-png.flaticon.com/512/742/742784.png",
+    confused: "https://cdn-icons-png.flaticon.com/512/742/742753.png",
+    sad: "https://cdn-icons-png.flaticon.com/512/742/742758.png",
+    sneeze: "https://cdn-icons-png.flaticon.com/512/742/742787.png",
+    angry: "https://cdn-icons-png.flaticon.com/512/742/742744.png",
+    yawn: "https://cdn-icons-png.flaticon.com/512/742/742911.png",
+    kiss: "https://cdn-icons-png.flaticon.com/512/742/742745.png",
+    sweat_smile: "https://cdn-icons-png.flaticon.com/512/742/742919.png",
+    amazed: "https://cdn-icons-png.flaticon.com/512/742/742939.png",
+    wink: "https://cdn-icons-png.flaticon.com/512/742/742922.png",
+    smirk: "https://cdn-icons-png.flaticon.com/512/742/742778.png",
+    unamused: "https://cdn-icons-png.flaticon.com/512/742/742934.png",
+    joy: "https://cdn-icons-png.flaticon.com/512/742/742921.png",
+    grin: "https://cdn-icons-png.flaticon.com/512/742/742751.png",
+  });
 }
 
 function emAddEmote(emotes) {
-	for (emote in emotes) {
-		emoteList[emote] = emotes[emote];
-	}
-	emConvert();
+  for (emote in emotes) {
+    emoteList[emote] = emotes[emote];
+  }
+  emConvert();
 }
 
-function emConvert() {
-	let elements = document.getElementsByClassName("em");
+function emConvert(convertingElement) {
+  let elements;
 
-	for (element of elements) {
-		for (key in emoteList) {
-			element.innerHTML = element.innerHTML.replace(":" + key + ":", "<img class=\"em\" src=\"" + emoteList[key] + "\" style=\"transform: translateY(0.25em);\"> &emsp;&thinsp;");
-		}
-		element.height = parseInt(window.getComputedStyle(element).fontSize, 10) + 6;
-	}
+  if (convertingElement == undefined) {
+    elements = document.body.getElementsByClassName("em");
+  } else {
+    elements = [convertingElement];
+  }
+
+  for (element of elements) {
+    for (key in emoteList) {
+      if (element.innerHTML != undefined) {
+        element.innerHTML = element.innerHTML.replace(
+          ":" + key + ":",
+          '<img class="em" src="' +
+            emoteList[key] +
+            '" style="transform: translateY(0.25em);"> &emsp;&thinsp;'
+        );
+      }
+
+      if (element.value != undefined) {
+        element.value = element.value.replace(
+          ":" + key + ":",
+          '<img class="em" src="' +
+            emoteList[key] +
+            '" style="transform: translateY(0.25em);"> &emsp;&thinsp;'
+        );
+      }
+    }
+    element.height =
+      parseInt(window.getComputedStyle(element).fontSize, 10) + 6;
+  }
 }
 
-window.onload = function() {
-	emAddDefault();
-	emConvert();
+window.onload = function () {
+  emAddDefault();
+  emConvert();
 
-	console.log("Default emoji icons created by flaticon.com");
-	console.log("https://www.flaticon.com/free-icons/emoji");
-}
+  console.log("Default emoji icons created by flaticon.com");
+  console.log("https://www.flaticon.com/free-icons/emoji");
+};

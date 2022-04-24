@@ -1,188 +1,202 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-	<title>Emotify</title>
-	<style type="text/css">
-		* {
-			font-family: 'Roboto', sans-serif;
-		}
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Emotify</title>
+    <style type="text/css">
+      * {
+        font-family: "Roboto", sans-serif;
+      }
 
-		html {
-			scroll-behavior: smooth;
-			scroll-padding-top: 70px; /* height of sticky header */
-		}
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 70px; /* height of sticky header */
+      }
 
-		::-moz-selection { /* Code for Firefox */
-			color: #FFFFFF;
-			background: #000000;
-		}
+      ::-moz-selection {
+        /* Code for Firefox */
+        color: #ffffff;
+        background: #000000;
+      }
 
-		::selection {
-			color: #FFFFFF;
-			background: #000000;
-		}
+      ::selection {
+        color: #ffffff;
+        background: #000000;
+      }
 
-		::-webkit-scrollbar {
-			width: 10px;
-		}
+      ::-webkit-scrollbar {
+        width: 10px;
+      }
 
-		::-webkit-scrollbar-track {
-			background-color: #F1F3F4;
-		}
- 
-		::-webkit-scrollbar-thumb {
-			background-color: #000000; 
-		}
+      ::-webkit-scrollbar-track {
+        background-color: #f1f3f4;
+      }
 
-		button {
-			border-color: #000000;
-			border-width: 1px;
-			outline: none;
-			background-color: #FFFFFF;
-			color: #000000;
-			padding: 15px;
-			width: 150px;
-			border-radius: 10px;
-			transition-duration: 0.2s;
-		}
+      ::-webkit-scrollbar-thumb {
+        background-color: #000000;
+      }
 
-		button:hover {
-			background-color: #000000;
-			color: #FFFFFF;
-			cursor: pointer;
-		}
+      button {
+        border-color: #000000;
+        border-width: 1px;
+        outline: none;
+        background-color: #ffffff;
+        color: #000000;
+        padding: 15px;
+        width: 150px;
+        border-radius: 10px;
+        transition-duration: 0.2s;
+      }
 
-		code {
-			font-family: 'Source Code Pro', monospace;
-			font-size: 0.8em;
-			background-color: #F1F3F4;
-			padding: 15px;
-			border-radius: 10px;
-			line-height: 60px;
-		}
+      button:hover {
+        background-color: #000000;
+        color: #ffffff;
+        cursor: pointer;
+      }
 
-		a {
-			color: #000000;
-		}
+      code {
+        font-family: "Source Code Pro", monospace;
+        font-size: 0.8em;
+        background-color: #f1f3f4;
+        padding: 15px;
+        border-radius: 10px;
+        line-height: 60px;
+      }
 
-		.no-select {
-			-webkit-touch-callout: none; /* iOS Safari */
-			-webkit-user-select: none; /* Safari */
-			-khtml-user-select: none; /* Konqueror HTML */
-			-moz-user-select: none; /* Old versions of Firefox */
-			-ms-user-select: none; /* Internet Explorer/Edge */
-			user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
-		}
+      a {
+        color: #000000;
+      }
 
-		.hero {
-			padding: 12%;
-			height: 100%;
-		}
+      .no-select {
+        -webkit-touch-callout: none; /* iOS Safari */
+        -webkit-user-select: none; /* Safari */
+        -khtml-user-select: none; /* Konqueror HTML */
+        -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+        user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+      }
 
-		.hero-title {
-			font-size: 4em;
-		}
+      .hero {
+        padding: 12%;
+        height: 50vh;
+      }
 
-		.hero-buttons {
-			margin-top: 2%;
-		}
+      .hero-title {
+        font-size: 4em;
+      }
 
-		.get-started {
-			margin: 12%;
-			margin-left: 15%;
-			margin-right: 15%;
-		}
+      .hero-buttons {
+        margin-top: 2%;
+      }
 
-		.get-started p {
-			font-size: 20px;
-			line-height: 45px;
-		}
-	</style>
-</head>
-<body>
-	<div class="hero">
-		<h1 class="hero-title em">
-			Emotify.js :laugh:
-		</h1>
-		<h2 class="hero-description em">
-			A JavaScript library that lets you add custom emotes into your website. :love:
-		</h2>
-		<div class="hero-buttons no-select">
-			<a href="#getStarted">
-				<button>
-					Quick start
-				</button>
-			</a>
-			<a href="https://github.com/aryanbaburajan/emotify" target="_blank">
-				<button>
-					Github
-				</button>
-			</a>
-		</div>
-	</div>
-	<div class="get-started" id="getStarted">
-		<p>
-			<b>Getting started with Emotify is a piece of cake!</b>
-			<br>
+      .get-started {
+        margin: 12%;
+        margin-left: 15%;
+        margin-right: 15%;
+      }
 
-			<b>1.</b> Include the Emotify script.
-			<br>
-			<code>
-				&lt;script src="https://cdn.jsdelivr.net/gh/aryanbaburajan/emotify/src/emotify.js"&gt;&lt;/script&gt;
-			</code>
-			<br>
+      .get-started p {
+        font-size: 20px;
+        line-height: 45px;
+      }
 
-			<b>2.</b> Create custom emotes.
-			<br>
-			<code>
-				emAddEmote({
-					"blobhype": "https://cdn.discordapp.com/emojis/833742785198424084.gif"
-				});
-			</code>
-			<br>
+      .demo {
+        background-color: #000000;
+        color: #ffffff;
+        padding: 20px;
+        outline: none;
+        border-radius: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="hero">
+      <h1 class="hero-title em">Emotify.js :laugh:</h1>
+      <h2 class="hero-description em">
+        A JavaScript library that lets you add custom emotes into your website.
+        :love:
+      </h2>
+      <div class="hero-buttons no-select">
+        <a href="#getStarted">
+          <button>Quick start</button>
+        </a>
+        <a href="https://github.com/aryanbaburajan/emotify" target="_blank">
+          <button>Github</button>
+        </a>
+      </div>
+      <br />
+      <!-- <div>
+        <h2>Demo</h2>
+        <div
+          contenteditable="true"
+          class="demo em"
+          placeholder="Enter your text here"
+          rows="10"
+          cols="100"
+          onkeyup="emConvert(this);"
+        ></div>
+      </div> -->
+    </div>
+    <div class="get-started" id="getStarted">
+      <p>
+        <b>Getting started with Emotify is a piece of cake!</b>
+        <br />
 
-			<b>3.</b> Create an element with the <code>em</code> class, and Emotify will automatically convert the text into emotes for you when the document loads.
-			<br>
-			<code>
-				&lt;p class="em"&gt;Hello, World! :blobhype:&lt;/p&gt;
-			</code>
-			<br>
-			<code class="em">
-				Hello, World! :blobhype:
-			</code>
-			<br>
+        <b>1.</b> Include the Emotify script.
+        <br />
+        <code>
+          &lt;script
+          src="https://cdn.jsdelivr.net/gh/aryanbaburajan/emotify/src/emotify.js"&gt;&lt;/script&gt;
+        </code>
+        <br />
 
-			<b>4.</b> Changed the text? You may reconvert it using the <code>emConvert();</code> function.
-			<br>
-			<code>
-				emConvert();
-			</code>
-			<br>
+        <b>2.</b> Create custom emotes.
+        <br />
+        <code>
+          emAddEmote({ "blobhype":
+          "https://cdn.discordapp.com/emojis/833742785198424084.gif" });
+        </code>
+        <br />
 
-			<b>5.</b> Emotify comes with 20+ built-in default emotes as well!
-			<br>
-			<code>
-				&lt;p class="em"&gt;Hi :grin:&lt;/p&gt;
-			</code>
-			<br>
-			<code class="em">
-				Hi :grin:
-			</code>
-			<br>
+        <b>3.</b> Create an element with the <code>em</code> class, and Emotify
+        will automatically convert the text into emotes for you when the
+        document loads.
+        <br />
+        <code> &lt;p class="em"&gt;Hello, World! :blobhype:&lt;/p&gt; </code>
+        <br />
+        <code class="em"> Hello, World! :blobhype: </code>
+        <br />
 
-			<b>6.</b> Feel free to look at the <a href="./docs.html">documentation</a> for a list of default emotes and functions available.
-		</p>
-	</div>
-	<script src="./src/emotify.js"></script>
-	<script type="text/javascript">
-		emAddEmote({
-			"blobhype": "https://cdn.discordapp.com/emojis/833742785198424084.gif"
-		});
-	</script>
-</body>
+        <b>4.</b> Changed the text? You may reconvert it using the
+        <code>emConvert();</code> function.
+        <br />
+        <code> emConvert(); </code>
+        <br />
+
+        <b>5.</b> Emotify comes with 20+ built-in default emotes as well!
+        <br />
+        <code> &lt;p class="em"&gt;Hi :grin:&lt;/p&gt; </code>
+        <br />
+        <code class="em"> Hi :grin: </code>
+        <br />
+
+        <b>6.</b> Feel free to look at the
+        <a href="./docs.html">documentation</a> for a list of default emotes and
+        functions available.
+      </p>
+    </div>
+    <script src="./src/emotify.js"></script>
+    <script type="text/javascript">
+      emAddEmote({
+        blobhype: "https://cdn.discordapp.com/emojis/833742785198424084.gif",
+      });
+    </script>
+  </body>
 </html>
