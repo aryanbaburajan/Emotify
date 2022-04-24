@@ -57,14 +57,8 @@ function emAddEmote(emotes) {
   emConvert();
 }
 
-function emConvert(convertingElement) {
-  let elements;
-
-  if (convertingElement == undefined) {
-    elements = document.body.getElementsByClassName("em");
-  } else {
-    elements = [convertingElement];
-  }
+function emConvert() {
+  elements = document.body.getElementsByClassName("em");
 
   for (element of elements) {
     for (key in emoteList) {
@@ -73,7 +67,7 @@ function emConvert(convertingElement) {
           ":" + key + ":",
           '<img class="em" src="' +
             emoteList[key] +
-            '" style="transform: translateY(0.25em);"> &emsp;&thinsp;'
+            '" style="transform: translateY(0.25em);">'
         );
       }
 
@@ -82,12 +76,17 @@ function emConvert(convertingElement) {
           ":" + key + ":",
           '<img class="em" src="' +
             emoteList[key] +
-            '" style="transform: translateY(0.25em);"> &emsp;&thinsp;'
+            '" style="transform: translateY(0.25em);">'
         );
       }
     }
+  }
+
+  elements = document.body.getElementsByClassName("em");
+
+  for (element of elements) {
     element.height =
-      parseInt(window.getComputedStyle(element).fontSize, 10) + 6;
+      parseInt(window.getComputedStyle(element.parentElement).fontSize, 10) + 6;
   }
 }
 

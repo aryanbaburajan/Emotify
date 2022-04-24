@@ -1,9 +1,7 @@
-<div style="background-color: #ffffff; padding: 50px; color:black;">
-  <h1>Emotify 😆</h1>
-  <h3>
-    A JavaScript library that lets you add custom emotes into your website.
-  </h3>
-</div>
+<h1>Emotify 😆</h1>
+<h3>
+  A JavaScript library that lets you add custom emotes into your website.
+</h3>
 <br>
 
 ## Getting Started

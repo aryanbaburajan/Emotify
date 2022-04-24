@@ -43,7 +43,7 @@
         background-color: #000000;
       }
 
-      button {
+      .hero-btn {
         border-color: #000000;
         border-width: 1px;
         outline: none;
@@ -55,7 +55,7 @@
         transition-duration: 0.2s;
       }
 
-      button:hover {
+      .hero-btn:hover {
         background-color: #000000;
         color: #ffffff;
         cursor: pointer;
@@ -92,7 +92,7 @@
         font-size: 4em;
       }
 
-      .hero-buttons {
+      .hero-btns {
         margin-top: 2%;
       }
 
@@ -114,6 +114,56 @@
         outline: none;
         border-radius: 10px;
       }
+
+      .demo-convert-btn {
+        border-width: 1px;
+        outline: none;
+        background-color: #ffffff;
+        color: #000000;
+        padding: 15px;
+        border-radius: 10px;
+        transition-duration: 0.2s;
+        float: right;
+      }
+
+      .demo-convert-btn:hover {
+        background-color: #000000;
+        color: #ffffff;
+        cursor: pointer;
+      }
+
+      @media screen and (max-width: 800px) {
+        .hero {
+          padding: 8%;
+          height: 100vh;
+        }
+
+        .love-emote {
+          display: none;
+        }
+
+        .hero-btn {
+          width: 100%;
+          margin-bottom: 10px;
+        }
+
+        .hero-btn:hover {
+          background-color: #ffffff;
+          color: #000000;
+        }
+
+        .get-started {
+          margin: 5%;
+        }
+
+        code {
+          white-space: nowrap;
+        }
+
+        .demo-convert-btn {
+          margin-bottom: 100px;
+        }
+      }
     </style>
   </head>
   <body>
@@ -121,28 +171,17 @@
       <h1 class="hero-title em">Emotify.js :laugh:</h1>
       <h2 class="hero-description em">
         A JavaScript library that lets you add custom emotes into your website.
-        :love:
+        <span class="love-emote">:love:</span>
       </h2>
-      <div class="hero-buttons no-select">
+      <div class="hero-btns no-select">
         <a href="#getStarted">
-          <button>Quick start</button>
+          <button class="hero-btn">Quick start</button>
         </a>
         <a href="https://github.com/aryanbaburajan/emotify" target="_blank">
-          <button>Github</button>
+          <button class="hero-btn">Github</button>
         </a>
       </div>
       <br />
-      <!-- <div>
-        <h2>Demo</h2>
-        <div
-          contenteditable="true"
-          class="demo em"
-          placeholder="Enter your text here"
-          rows="10"
-          cols="100"
-          onkeyup="emConvert(this);"
-        ></div>
-      </div> -->
     </div>
     <div class="get-started" id="getStarted">
       <p>
@@ -191,6 +230,21 @@
         <a href="./docs.html">documentation</a> for a list of default emotes and
         functions available.
       </p>
+      <br /><br />
+      <div>
+        <h2>Demo</h2>
+        <div
+          id="demo"
+          contenteditable="true"
+          class="demo em"
+          rows="10"
+          cols="100"
+        >
+          Enter your text here :grin:
+        </div>
+        <br />
+        <button class="demo-convert-btn" onclick="emConvert();">Convert</button>
+      </div>
     </div>
     <script src="./src/emotify.js"></script>
     <script type="text/javascript">
