@@ -22,6 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
+
 let emoteList = {};
 
 class Emotify {
@@ -102,3 +103,19 @@ window.onload = function () {
   console.log("Default emoji icons created by flaticon.com");
   console.log("https://www.flaticon.com/free-icons/emoji");
 };
+
+(function (root, factory) {
+  if (typeof define === 'function' && define.amd) {
+    // AMD. Register as an anonymous module.
+    define(['exports', 'b'], factory);
+  } else if (typeof exports === 'object' && typeof exports.nodeName !== 'string') {
+    // CommonJS
+    factory(exports, require('b'));
+  } else {
+    // Browser globals
+    factory((root.commonJsStrict = {}), root.b);
+  }
+}(this, function (exports, b) {
+  exports.emotify = emotify;
+  exports.Emotify = Emotify;
+}));
