@@ -26,7 +26,7 @@ let emoteList = {};
 
 class Emotify {
   addDefault() {
-    addEmote({
+    this.addEmote({
       sigh: "https://cdn-icons-png.flaticon.com/512/742/742752.png",
       sweat: "https://cdn-icons-png.flaticon.com/512/742/742860.png",
       neutral: "https://cdn-icons-png.flaticon.com/512/742/742774.png",
@@ -52,17 +52,17 @@ class Emotify {
   }
 
   addEmote(emotes) {
-    for (emote in emotes) {
+    for (let emote in emotes) {
       emoteList[emote] = emotes[emote];
     }
-    convert();
+    this.convert();
   }
 
   convert() {
-    elements = document.body.getElementsByClassName("em");
+    let elements = document.body.getElementsByClassName("em");
 
-    for (element of elements) {
-      for (key in emoteList) {
+    for (let element of elements) {
+      for (let key in emoteList) {
         if (element.innerHTML != undefined) {
           element.innerHTML = element.innerHTML.replace(
             ":" + key + ":",
@@ -85,7 +85,7 @@ class Emotify {
 
     elements = document.body.getElementsByClassName("em");
 
-    for (element of elements) {
+    for (let element of elements) {
       element.height =
         parseInt(window.getComputedStyle(element.parentElement).fontSize, 10) +
         6;

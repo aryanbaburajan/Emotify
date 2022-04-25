@@ -1,4 +1,4 @@
-<h1>Emotify 😆</h1>
+![banner](./img/banner.png)
 <h3>
   A JavaScript library that lets you add custom emotes into your website.
 </h3>

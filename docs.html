@@ -9,7 +9,25 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="icon" type="image/x-icon" href="./img/icon.png">
+    <!-- Primary Meta Tags -->
+    <meta name="title" content="Emotify.js">
+    <meta name="description" content="A JavaScript library that lets you add custom emotes into your website.">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://emotify.js.org/">
+    <meta property="og:title" content="Emotify.js">
+    <meta property="og:description" content="A JavaScript library that lets you add custom emotes into your website.">
+    <meta property="og:image" content="./img/banner.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://emotify.js.org/">
+    <meta property="twitter:title" content="Emotify.js">
+    <meta property="twitter:description" content="A JavaScript library that lets you add custom emotes into your website.">
+    <meta property="twitter:image" content="./img/banner.png">
+    
     <title>Emotify</title>
     <style type="text/css">
       * {
@@ -91,14 +109,14 @@
   </head>
   <body>
     <div class="content">
-      <h1>emAddEmote()</h1>
+      <h1>emotify.addEmote()</h1>
       <p>
-        <code>emAddEmote()</code> adds to the list of emotes, an emote that will
+        <code>emotify.addEmote()</code> adds to the list of emotes, an emote that will
         be considered while emotify-ing text.
       </p>
 
       <h2>Syntax</h2>
-      <code> emAddEmote({"emoteName", "emoteURL"}); </code>
+      <code> emotify.addEmote({"emoteName", "emoteURL"}); </code>
 
       <h2>Parameters</h2>
       <code>emotes</code> An object containing the emote names and URLs as key
@@ -106,7 +124,7 @@
 
       <h2>Example</h2>
       <pre>
-emAddEmote({
+emotify.addEmote({
 	"sigh": "./sigh.png",
 	"sweat": "./sweat.png",
 	"neutral": "./neutral.png",
@@ -116,20 +134,20 @@ emAddEmote({
       >
       <br />
 
-      <h1>emConvert()</h1>
+      <h1>emotify.convert()</h1>
       <p>
-        <code>emConvert()</code> Reconverts all texts into emotes, useful in
+        <code>emotify.convert()</code> Reconverts all texts into emotes, useful in
         scenarios where the text changes after page load.
       </p>
 
       <h2>Syntax</h2>
-      <code> emConvert(); </code>
+      <code>emotify.convert(); </code>
 
       <h2>Parameters</h2>
       No parameters.
 
       <h2>Example</h2>
-      <pre>emConvert();</pre>
+      <pre>emotify.convert();</pre>
       <br />
 
       <h1>Default Emote List</h1>

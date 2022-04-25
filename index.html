@@ -9,6 +9,25 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
+    <link rel="icon" type="image/x-icon" href="./img/icon.png">
+    <!-- Primary Meta Tags -->
+    <meta name="title" content="Emotify.js">
+    <meta name="description" content="A JavaScript library that lets you add custom emotes into your website.">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://emotify.js.org/">
+    <meta property="og:title" content="Emotify.js">
+    <meta property="og:description" content="A JavaScript library that lets you add custom emotes into your website.">
+    <meta property="og:image" content="./img/banner.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://emotify.js.org/">
+    <meta property="twitter:title" content="Emotify.js">
+    <meta property="twitter:description" content="A JavaScript library that lets you add custom emotes into your website.">
+    <meta property="twitter:image" content="./img/banner.png">
+
     <title>Emotify</title>
     <style type="text/css">
       * {
@@ -171,7 +190,7 @@
       <h1 class="hero-title em">Emotify.js :laugh:</h1>
       <h2 class="hero-description em">
         A JavaScript library that lets you add custom emotes into your website.
-        <span class="love-emote">:love:</span>
+        <span class="love-emote">:smile:</span>
       </h2>
       <div class="hero-btns no-select">
         <a href="#getStarted">
@@ -192,14 +211,14 @@
         <br />
         <code>
           &lt;script
-          src="https://cdn.jsdelivr.net/gh/aryanbaburajan/emotify/src/emotify.js"&gt;&lt;/script&gt;
+          src="https://cdn.jsdelivr.net/gh/aryanbaburajan/emotify/src/emotify.min.js"&gt;&lt;/script&gt;
         </code>
         <br />
 
         <b>2.</b> Create custom emotes.
         <br />
         <code>
-          emAddEmote({ "blobhype":
+          emotify.addEmote({ "blobhype":
           "https://cdn.discordapp.com/emojis/833742785198424084.gif" });
         </code>
         <br />
@@ -214,9 +233,9 @@
         <br />
 
         <b>4.</b> Changed the text? You may reconvert it using the
-        <code>emConvert();</code> function.
+        <code>emotify.convert();</code> function.
         <br />
-        <code> emConvert(); </code>
+        <code> emotify.convert(); </code>
         <br />
 
         <b>5.</b> Emotify comes with 20+ built-in default emotes as well!
@@ -243,13 +262,19 @@
           Enter your text here :grin:
         </div>
         <br />
-        <button class="demo-convert-btn" onclick="emConvert();">Convert</button>
+        <button class="demo-convert-btn" onclick="emotify.convert();">Convert</button>
       </div>
     </div>
     <script src="./src/emotify.js"></script>
     <script type="text/javascript">
       emotify.addEmote({
         blobhype: "https://cdn.discordapp.com/emojis/833742785198424084.gif",
+      });
+
+      document.querySelector('div[contenteditable="true"]').addEventListener("paste", function(e) {
+        e.preventDefault();
+        var text = e.clipboardData.getData("text/plain");
+        document.execCommand("insertHTML", false, text);
       });
     </script>
   </body>
