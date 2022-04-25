@@ -9,24 +9,33 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
-    <link rel="icon" type="image/x-icon" href="./img/icon.png">
+    <link rel="icon" type="image/x-icon" href="./img/icon.png" />
     <!-- Primary Meta Tags -->
-    <meta name="title" content="Emotify.js">
-    <meta name="description" content="A JavaScript library that lets you add custom emotes into your website.">
+    <meta name="title" content="Emotify.js" />
+    <meta
+      name="description"
+      content="A JavaScript library that lets you add custom emotes into your website."
+    />
 
     <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://emotify.js.org/">
-    <meta property="og:title" content="Emotify.js">
-    <meta property="og:description" content="A JavaScript library that lets you add custom emotes into your website.">
-    <meta property="og:image" content="./img/banner.png">
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://emotify.js.org/" />
+    <meta property="og:title" content="Emotify.js" />
+    <meta
+      property="og:description"
+      content="A JavaScript library that lets you add custom emotes into your website."
+    />
+    <meta property="og:image" content="./img/banner.png" />
 
     <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://emotify.js.org/">
-    <meta property="twitter:title" content="Emotify.js">
-    <meta property="twitter:description" content="A JavaScript library that lets you add custom emotes into your website.">
-    <meta property="twitter:image" content="./img/banner.png">
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://emotify.js.org/" />
+    <meta property="twitter:title" content="Emotify.js" />
+    <meta
+      property="twitter:description"
+      content="A JavaScript library that lets you add custom emotes into your website."
+    />
+    <meta property="twitter:image" content="./img/banner.png" />
 
     <title>Emotify</title>
     <style type="text/css">
@@ -37,6 +46,11 @@
       html {
         scroll-behavior: smooth;
         scroll-padding-top: 70px; /* height of sticky header */
+        background-image: url(./img/bg.svg);
+        background-size: 100% 100%;
+        -o-background-size: 100% 100%;
+        -webkit-background-size: 100% 100%;
+        background-size: cover;
       }
 
       ::-moz-selection {
@@ -87,6 +101,7 @@
         padding: 15px;
         border-radius: 10px;
         line-height: 60px;
+        white-space: nowrap;
       }
 
       a {
@@ -262,7 +277,9 @@
           Enter your text here :grin:
         </div>
         <br />
-        <button class="demo-convert-btn" onclick="emotify.convert();">Convert</button>
+        <button class="demo-convert-btn" onclick="emotify.convert();">
+          Convert
+        </button>
       </div>
     </div>
     <script src="./src/emotify.js"></script>
@@ -271,11 +288,13 @@
         blobhype: "https://cdn.discordapp.com/emojis/833742785198424084.gif",
       });
 
-      document.querySelector('div[contenteditable="true"]').addEventListener("paste", function(e) {
-        e.preventDefault();
-        var text = e.clipboardData.getData("text/plain");
-        document.execCommand("insertHTML", false, text);
-      });
+      document
+        .querySelector('div[contenteditable="true"]')
+        .addEventListener("paste", function (e) {
+          e.preventDefault();
+          var text = e.clipboardData.getData("text/plain");
+          document.execCommand("insertHTML", false, text);
+        });
     </script>
   </body>
 </html>

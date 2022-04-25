@@ -22,10 +22,11 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-
-let emoteList = {};
-
 class Emotify {
+  constructor() {
+    this.emoteList = {};
+  }
+
   addDefault() {
     this.addEmote({
       sigh: "https://cdn-icons-png.flaticon.com/512/742/742752.png",
@@ -54,7 +55,7 @@ class Emotify {
 
   addEmote(emotes) {
     for (let emote in emotes) {
-      emoteList[emote] = emotes[emote];
+      this.emoteList[emote] = emotes[emote];
     }
     this.convert();
   }
@@ -63,12 +64,12 @@ class Emotify {
     let elements = document.body.getElementsByClassName("em");
 
     for (let element of elements) {
-      for (let key in emoteList) {
+      for (let key in this.emoteList) {
         if (element.innerHTML != undefined) {
           element.innerHTML = element.innerHTML.replace(
             ":" + key + ":",
             '<img class="em" src="' +
-              emoteList[key] +
+              this.emoteList[key] +
               '" style="transform: translateY(0.25em);">'
           );
         }
@@ -77,7 +78,7 @@ class Emotify {
           element.value = element.value.replace(
             ":" + key + ":",
             '<img class="em" src="' +
-              emoteList[key] +
+              this.emoteList[key] +
               '" style="transform: translateY(0.25em);">'
           );
         }
@@ -94,7 +95,7 @@ class Emotify {
   }
 }
 
-let emotify = new Emotify();
+var emotify = new Emotify();
 
 window.onload = function () {
   emotify.addDefault();
@@ -103,19 +104,3 @@ window.onload = function () {
   console.log("Default emoji icons created by flaticon.com");
   console.log("https://www.flaticon.com/free-icons/emoji");
 };
-
-(function (root, factory) {
-  if (typeof define === 'function' && define.amd) {
-    // AMD. Register as an anonymous module.
-    define(['exports', 'b'], factory);
-  } else if (typeof exports === 'object' && typeof exports.nodeName !== 'string') {
-    // CommonJS
-    factory(exports, require('b'));
-  } else {
-    // Browser globals
-    factory((root.commonJsStrict = {}), root.b);
-  }
-}(this, function (exports, b) {
-  exports.emotify = emotify;
-  exports.Emotify = Emotify;
-}));

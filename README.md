@@ -1,5 +1,5 @@
 ![banner](./img/banner.png)
-<h3>
+<h3 style="text-align: center;">
   A JavaScript library that lets you add custom emotes into your website.
 </h3>
 <br>
@@ -8,12 +8,12 @@
 
 1. Include the Emotify script.
 ```
-<script src="https://cdn.jsdelivr.net/gh/aryanbaburajan/emotify/src/emotify.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/aryanbaburajan/emotify/src/emotify.min.js"></script>
 ```
 
 2. Create custom emotes.
 ```
-emAddEmote({ "blobhype": "https://cdn.discordapp.com/emojis/833742785198424084.gif" });
+emotify.addEmote({ "blobhype": "https://cdn.discordapp.com/emojis/833742785198424084.gif" });
 ```
 
 3. Create an element with the `em` class, and Emotify will automatically convert the text into emotes for you when the document loads.
@@ -24,7 +24,7 @@ emAddEmote({ "blobhype": "https://cdn.discordapp.com/emojis/833742785198424084.g
 
 4. Changed the text? You may reconvert it using the emConvert(); function.
 ```
-emConvert();
+emotify.convert();
 ```
 
 5. Emotify comes with 20+ built-in default emotes as well!
