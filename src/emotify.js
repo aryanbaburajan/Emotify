@@ -61,31 +61,13 @@ class Emotify {
   }
 
   convert() {
-    let elements = document.body.getElementsByClassName("em");
-
-    for (let element of elements) {
-      for (let key in this.emoteList) {
-        if (element.innerHTML != undefined) {
-          element.innerHTML = element.innerHTML.replace(
-            ":" + key + ":",
-            '<img class="em" src="' +
-              this.emoteList[key] +
-              '" style="transform: translateY(0.25em);">'
-          );
-        }
-
-        if (element.value != undefined) {
-          element.value = element.value.replace(
-            ":" + key + ":",
-            '<img class="em" src="' +
-              this.emoteList[key] +
-              '" style="transform: translateY(0.25em);">'
-          );
-        }
-      }
+    for (let key in this.emoteList) {
+      document.body.innerHTML = document.body.innerHTML.replace(
+        `:${key}:`,
+        `<img class="em-emotes" src="${this.emoteList[key]}" style="transform: translateY(0.25em);">`)
     }
 
-    elements = document.body.getElementsByClassName("em");
+    const elements = document.body.getElementsByClassName("em-emotes");
 
     for (let element of elements) {
       element.height =
